@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 
 const CardContainer = styled.div`
     width: 100%;
@@ -55,6 +55,10 @@ const CardTag = styled.span`
     font-weight: bold;
     border-radius: 5px;
     cursor: pointer;
+    ${props => props.active && css`
+        background: var(--desaturated-dark-cyan);
+        color: var(--light-grayish-cyan-background);
+    `}
 `
 
 export { 
