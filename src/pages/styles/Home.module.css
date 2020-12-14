@@ -16,3 +16,9 @@
 .main > div {
   margin-bottom: 20px;
 }
+
+@media(max-width: 400px) {
+  .main > div {
+    margin-bottom: 3rem;
+  }
+}

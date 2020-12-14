@@ -36,7 +36,7 @@ export default function Home() {
       </Head>
 
       <PageHeader />
-      <div style={{ display: 'flex', padding: 10 }}>
+      <div style={{ display: 'flex', padding: 10, flexWrap: 'wrap' }}>
         {filterValue.map(current => <Tag key={current} close={() => removeFilter(current)}>{current}</Tag>)}
       </div>
       <main className={styles.main}>
