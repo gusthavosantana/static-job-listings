@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
+import { FilterContext } from '../../context/filter'
 import { 
     CardContainer,
     CardProfileContainer,
@@ -11,7 +12,8 @@ import {
     CardTag
 } from './styles';
 
-export default function Card({ item, toggleFilter, filterValue }) {
+export default function Card({ item }) {
+    const { filter, toggle } = useContext(FilterContext)
     const tags = [
         item.role,
         item.level,
@@ -38,7 +40,7 @@ export default function Card({ item, toggleFilter, filterValue }) {
             </CardProfileContainer>
             <CardSkills>
                 {tags.map(tagValue => (
-                    <CardTag key={tagValue} onClick={() => toggleFilter(tagValue)} active={filterValue.includes(tagValue)}>
+                    <CardTag key={tagValue} onClick={() => toggle(tagValue)} active={filter.items.includes(tagValue)}>
                         {tagValue}
                     </CardTag>
                 ))}
